@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep typing</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <meta name="description" content="">
+    
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAB/0lEQVRYR+2XTygEcRTHTZSyBwclSnFQLlIuasvm4iBOkj1RRAnlIJK0iiQi5YDUFgenlZz8Obj4UysXkYtyoBQpB2qVovX5be8nNqtZzOxgp15vvjNv3vv+vr83v5mfkeKgw3AQl5QkmViz4VxlwuFwJqxLsFQbeumZGseGYdzpWq/KQGSai102kIguMQahfnUxQgYiVbiNBBDRJT0Q2tNkBrk6JHdO8dc2EMuhRpHUGYDMqCYzwcUeudHMjUWryTAbTdRYkDqT1Oz9PWRgXw7zXGG/hXdhbsFnjOaQmFpwGvYEXgWXcl4oMUF8CKsUfKV6Q/o0PmVIvMaD1ZKoDF+ABQTPkriTGFUsA3sAu8AznHdIjBd/jh0IXiem5k+QaWcUxTKqcXwW1ip4m1EGUGIKnI49grvBSo0KifHjb7E+wSfEzH1JGUlgiYv7beKBFZioBVEdHiwfWxI8L0rcgFVjh8DZolSbxDTgL7BdwZvE1H1JGac1sHOUsaRZJGncPRNNRhY0/TaZ4epXC+NHgT9Bpp7EetEzQ8YLmeV/QSaPUepvkxllgihzaYkyZqqbjfl2z5gtZCbuMzI+EgxLkkT86fmYzhH9c6WW+h0zI7Ioxg2Z/be7gxYKqa+s3UcjRCLfu3ebuATsm44gcq9H79wdpd3zE10vqUysGXCUMi+hkWozJMkUSAAAAABJRU5ErkJggg==">
+    <meta name="keywords" content="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
+</head>
+<body>
+    <h1 class="web-title" style="color: #646669;">Keyboard Speed Typing</h1>
+    
+    <div data-aos="fade-in" class="typing-container">
+        <p id="typing-content"></p>
+        <input type="text" id="typing-textbox" placeholder="Type Here "/>
+    </div>
+    <div class="analyze">
+        <h3 id="word-per-second-minute">wpm :12 </h3>
+        <h3 id="correct-words" style="color: rgb(100, 203, 100);">correct :0 </h3>
+        <h3 id="wrong-words" style="color: #ca4754;">wrong : 0 </h3>
+        <h3 id="total-words">total :60 </h3>
+        <h3 id="timer-text">time : 30s </h3>
+    </div>
+    
+    
+        <button id="restart-btn" type="button" title="Restart">
+           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAEU0lEQVRoQ+2ZZ2gUQRTHPQuIBQ12iASxmyiCBUXUKCg2FMUewYafLBA1igUsYE0UxfLJ8kGIDUGFSFRQREFIBAn2DmKDKBbsIPH3jl2ZG2dvZ2/35AIOPHZ39s3//XZ2Zm7nXaxOLS2xWspd5z+4++Zqampac57lWEOn/i3HJ7FY7FtUbzh0jwPaEpiZ2FRskA/YTe6XY4d5iEdhHiIBHIiGCH63EcR3FH5LsRE2/gafi9QVE0+OgYsO3huF2YgVeikB3E16DBsQOJq5wVWq5xHzcRA9E7i8zhKEinQhoFdTt8knwFfuV2OvsfpYK8ca+bQrImaJLbwXuLTfpfY80Ceom+IhfJf6Y1gpbZ6YfGjfmfoCbBomb81UjtJe5otvSQYujTchtJagezlfaFATyKX4nPWNpDigN4lL6d0OhnbGt637+YGLv4zBwYYAawDeHARY9+UB1lO3zqCxEW1T/R9XG3Bd9w0V4xGuDAPttgV+IOdnMJkLahlLjHNeMYKC30doCIIy+SIrwLdFrAJrr4i+l6FErI+mQEHBtyO0MjJiRQj4nlxexxor1Z7xgoKLZnzCpgl+MronNe1s4r3U46UCLhpbEVuVJvjL6OYr2geItSAqcNHZi+DiqOEZMrlo3lZ05ROkBbHkh+1P0Xu8CXf6BoCpRPBLAH8rV+Av4ThMcZ5OnOOe4Faq/8AJ8GWEUX/+9wOe8AMY+rM2Hc8BeBd0Hyja8mb7Z3yPCyDwnzm4S+MPwN1NSZw/I3vcAZcel553SxbwH9yLTAbXJ2gO4M+N4M6n50PlKctxHp2OcRxWU18O2yH4ShGtAlx2RRlXdPC6EP7E6jmk1YDLrj3jyl9jnOFyC8o8hbQ98C8yjdwEfgjIuQroQsD31wbwOUDKLt4taZmgvNmmBOgToEMq1O8VU483Q0w2Cg0c0V8cu9MoVALHBAj8HuoXWcLnwXDH9TWu4wgewWGWIlhGo3GWAQK5EWsnDTzzOIpYLgySTYgXL3BZAiW/opake8BAtJoz8Fup8ttZ+YOLLmKnOUxQYnzivB9Prf5AheFNaGsxbHoQ+17SHnfAsznKq5FJ5JZnnPRHQLKvkRWg2yB2DeuURNQO3IGfwbFUE5Mk0Ejgn0ZB7nzCXkArx0fPf3KqAghv51rPI76jbiLwkixKuaA9nMansOaayBWuh2p1srJJeiRerL4OCVCM73ID4XnqtiAogayLk6KWyZhvaBRPSeCzg3uSxnaL3eTUBRFaQd02DzqZNLInlKSncb130tMy9CTp2dVDJyFjq8Hbj3EDvKTLZI3vmKR7U0kzy0pVwEPfMMTcTd0SLHVwV5SekGRnVHmVDQCvTzbOnGzxPqvl0G/AOpuOXfiN8fP1uF9GfaHtpwTxEv7msZqcPr0hCfv5mOyUevk8RBX35c+rg7bAXnqhwVVhekX+LpHx30ILKMvnY2Az5+/CFIdJ6GaR9nhomgACtRb8N+F5fD6V3wVrAAAAAElFTkSuQmCC" alt="" srcset="">
+        </button>
+    
+
+    <div class="ads-container">
+        <div class="ads-1"></div>
+        <div class="ads-2"></div>
+    </div>
+
+    <footer>
+        <div  class="social-media-icons-container">
+             <a  href="https://github.com/almonther-altumi" target="_blank" rel="noopener noreferrer">Github</a>
+             <a href="https://harmash.com/users/Almonther_altumi" target="_blank" rel="noopener noreferrer">Harmash</a>
+        </div>
+    </footer>
+    
+<script src="public/main.js"></script>
+
+</body>
+</html>
