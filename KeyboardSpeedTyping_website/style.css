@@ -1,0 +1,153 @@
+body {
+    font-family: "Comic Sans MS", "Roboto Mono", "Vazirmatn", monospace;
+    font-size: 18px;
+    background-color: #eae4cf;
+    overflow-x:hidden;
+
+
+}
+.web-title{
+    text-align: center;
+    font-size: 60px;
+}
+.typing-container{
+    width: 90%;
+    padding: 30px;
+    background-color:#eae4cf;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+    
+
+
+}
+#typing-content{
+    font-size: 40px;
+    color: #ada998;
+
+}
+#typing-textbox{
+    background-color:  #eae4cf;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    font-size: px;
+
+    
+    font-family: "Comic Sans MS", "Roboto Mono", "Vazirmatn", monospace;
+    font-size: 18px;
+    background-color: #eae4cf;
+
+    border: 0px;
+    border-bottom: 1px dashed black;
+    
+    outline: none;
+    transition: all 0.2s ;
+}
+#typing-textbox:focus{
+   
+    
+    border-bottom: 1.5px dashed black;
+    
+}
+
+
+
+#restart-btn{
+    width: 100px;
+    height: 45px;
+
+    margin: 5px auto;
+    
+    display: block;
+    background: none;
+    border: none;
+    transition: all 0.6s;
+    outline-color: #646669;
+   
+
+}
+#restart-btn:hover{
+    
+    transform: rotateZ(180deg);
+    outline-color: #646669;
+
+
+
+}
+
+#restart-btn:active{
+    width: 100px;
+    height: 35px;
+    color: white;
+    outline-color: #646669;
+
+    transform: scale(1.2);
+}
+
+.analyze{
+    display: flex;
+    justify-content: center;
+ 
+    margin: 0px auto;
+    width: 50%;
+
+}
+.analyze h3{
+    margin: 6px;
+}
+#timer-text{
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+footer{
+    display: flex;
+    overflow-x: hidden;
+    
+
+    position: relative;
+    bottom: 0;
+
+    width: 100%;
+    height: 50px;
+
+
+}
+.social-media-icons-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.social-media-icons-container a{
+    margin: 8px;
+    text-decoration-style: wavy;
+    color: #646669;
+
+    transition: all 0.5s;
+}
+
+.social-media-icons-container a:hover{
+    text-decoration:none;
+    
+    font-size: larger;
+}
+
+
+
+
+
+.correct {
+    color: #646669;
+}
+.incorrect{
+    color: #ca4754;
+}
+
+
+#total-words:hover{
+    cursor: pointer;    
+    -webkit-user-select: none;
+
+
+}
